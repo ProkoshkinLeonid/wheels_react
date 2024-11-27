@@ -1,11 +1,9 @@
-import {FC, ReactNode} from "react";
+import { FC, ReactNode } from "react"
 
 interface ContentWrapperProps {
-    children: ReactNode
+  children: ReactNode
 }
 
 export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
-    return <div>
-        {children}
-    </div>
+  return <div>{children}</div>
 }

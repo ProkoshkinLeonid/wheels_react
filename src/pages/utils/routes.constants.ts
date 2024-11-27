@@ -1,27 +1,18 @@
 class ORIGIN {
-    static ROOT = "/"
+  static ROOT = "/"
 }
 
-
 class MAIN extends ORIGIN {
-    static INDEX = `${this.ROOT}main`
+  static INDEX = `${this.ROOT}main`
 }
 
 export class PAGES extends ORIGIN {
-    static MAIN = MAIN
+  static MAIN = MAIN
 }
 
-
-export const PARAM_NAMES = {
-
-}
-
+export const PARAM_NAMES = {}
 
 export const ROUTES = {
-    LOGIN: {
-
-    },
-    MAIN: {
-
-    },
+  LOGIN: {},
+  MAIN: {},
 }
