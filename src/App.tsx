@@ -3,6 +3,7 @@ import { Outlet, useNavigate } from "react-router-dom"
 
 import { AppShell, Flex, Group } from "@mantine/core"
 
+import { Header } from "./components/Header.tsx"
 import { PAGES } from "./pages/utils/routes.constants.ts"
 
 function App() {
@@ -21,9 +22,9 @@ function App() {
       header={{ height: 72 }}
       padding="md"
     >
-      <AppShell.Header>
+      <AppShell.Header bg="grey">
         <Group h="100%" w="100%">
-          <div>12312</div>
+          <Header />
         </Group>
       </AppShell.Header>
       <AppShell.Main pb={0} pr={0} w="100%">
