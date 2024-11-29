@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
 
-import { AppShell, Flex } from "@mantine/core"
+import { AppShell } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 
 import { Header } from "./components/Header.tsx"
@@ -17,13 +17,15 @@ function App() {
 
   return (
     <AppShell
+      styles={{
+        header: { borderBottom: 0 },
+      }}
       header={{ height: 72 }}
       navbar={{
         width: 300,
         breakpoint: "sm",
         collapsed: { desktop: true, mobile: !opened },
       }}
-      padding="md"
     >
       <AppShell.Header bg="grey">
         <Header variant="header" opened={opened} toggle={toggle} />
@@ -33,10 +35,8 @@ function App() {
         <Header variant="navbar" />
       </AppShell.Navbar>
 
-      <AppShell.Main pb={0} pr={0} w="100%">
-        <Flex direction="column" h="100%" w="100%">
-          <Outlet />
-        </Flex>
+      <AppShell.Main pb={0} pr={0} w="100%" h="100vh">
+        <Outlet />
       </AppShell.Main>
     </AppShell>
   )
