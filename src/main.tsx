@@ -12,12 +12,15 @@ import { createRoot } from "react-dom/client"
 
 import App from "./App.tsx"
 import { Main } from "./pages/Main.tsx"
+import { Services } from "./pages/Services.tsx"
 import { PAGES } from "./pages/utils/routes.constants.ts"
 
 import "@mantine/core/styles.css"
 
 const theme = createTheme({
-  /** Put your mantine theme override here */
+  colors: {
+    yellow: ["red"],
+  },
 })
 
 const router = createBrowserRouter(
@@ -25,6 +28,7 @@ const router = createBrowserRouter(
     <>
       <Route path={PAGES.ROOT} element={<App />}>
         <Route path={PAGES.MAIN.INDEX} element={<Main />} />
+        <Route path={PAGES.MAIN.SERVICES} element={<Services />} />
       </Route>
       <Route path="*" element={<Navigate to={PAGES.ROOT} />} />
     </>,

@@ -1,5 +1,12 @@
-import { ContentWrapper } from "../components/ContentWrapper.tsx"
+import { Section } from "../components/Section.tsx"
 
 export const Main = () => {
-  return <ContentWrapper>Main1</ContentWrapper>
+  return (
+    <Section title="Сервис 'Наша Шина'">
+      На дороге важны не только скорость и мощь, но и уверенность в своем
+      автомобиле. В шинном сервисе «Наша шина» объединены передовые технологии и
+      опыт мастеров.Монтаж, хранение шин, восстановление геометрии диска,
+      широкий выбор б/у резины и уютная зона ожидания.
+    </Section>
+  )
 }

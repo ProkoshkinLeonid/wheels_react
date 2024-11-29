@@ -4,6 +4,8 @@ class ORIGIN {
 
 class MAIN extends ORIGIN {
   static INDEX = `${this.ROOT}main`
+
+  static SERVICES = `${this.INDEX}/services`
 }
 
 export class PAGES extends ORIGIN {

@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
 
-import { AppShell, Button, Flex } from "@mantine/core"
+import { AppShell, Flex } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 
 import { Header } from "./components/Header.tsx"
@@ -26,15 +26,11 @@ function App() {
       padding="md"
     >
       <AppShell.Header bg="grey">
-        <Header opened={opened} toggle={toggle} />
+        <Header variant="header" opened={opened} toggle={toggle} />
       </AppShell.Header>
 
       <AppShell.Navbar py="md" px={4}>
-        <Button variant="default">Главная</Button>
-        <Button variant="default">Услуги</Button>
-        <Button variant="default">CКаталог б/у Резины</Button>
-        <Button variant="default">Акции и скидки</Button>
-        <Button variant="default">Контакты</Button>
+        <Header variant="navbar" />
       </AppShell.Navbar>
 
       <AppShell.Main pb={0} pr={0} w="100%">
