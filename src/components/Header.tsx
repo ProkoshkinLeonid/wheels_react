@@ -1,8 +1,7 @@
-import { FC } from "react"
-import { useNavigate } from "react-router-dom"
+import { FC, Fragment } from "react"
 
-import { Button } from "@components/Button"
-import { Burger, Group } from "@mantine/core"
+import { NavLink } from "@components/NavLink"
+import { Burger, Divider, Flex, Group } from "@mantine/core"
 
 import { PAGES } from "../pages/utils/routes.constants.ts"
 
@@ -11,44 +10,44 @@ interface HeaderProps {
   toggle?(): void
   variant: "navbar" | "header"
 }
+
+const PAGES_LINKS = [
+  { page: PAGES.MAIN.INDEX, label: "Главная", end: true },
+  { page: PAGES.MAIN.SERVICES, label: "Услуги" },
+  { page: PAGES.MAIN.CATALOG, label: "Каталог б/у Резины" },
+  { page: PAGES.MAIN.DISCOUNT, label: "Акции и скидки" },
+  { page: PAGES.MAIN.CONTACTS, label: "Контакты" },
+]
+
 export const Header: FC<HeaderProps> = ({ opened, toggle, variant }) => {
-  const navigate = useNavigate()
-
-  const Buttons = () => {
-    return (
-      <>
-        <Button
-          variant="transparent"
-          onClick={() => navigate(PAGES.MAIN.INDEX)}
-        >
-          Главная
-        </Button>
-        <Button
-          variant="transparent"
-          onClick={() => navigate(PAGES.MAIN.SERVICES)}
-        >
-          Услуги
-        </Button>
-        <Button variant="transparent">Каталог б/у Резины</Button>
-        <Button variant="transparent">Акции и скидки</Button>
-        <Button variant="transparent">Контакты</Button>
-      </>
-    )
-  }
-
   if (variant === "header") {
     return (
-      <Group h="100%" px="md">
+      <Group h="100%" px="xl">
         <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
         <Group justify="space-between" style={{ flex: 1 }}>
           <div>LOGO</div>
-          <Group ml="xl" gap="md" visibleFrom="sm">
-            <Buttons />
-          </Group>
+          <Flex gap="xl">
+            {PAGES_LINKS.map(({ page, label, end }) => (
+              <NavLink key={page} to={page} end={end}>
+                {label}
+              </NavLink>
+            ))}
+          </Flex>
         </Group>
       </Group>
     )
   }
 
-  return <Buttons />
+  return (
+    <Flex p="md" h="100%" direction="column" bg="grey">
+      {PAGES_LINKS.map(({ page, label, end }) => (
+        <Fragment key={page}>
+          <NavLink onClick={toggle} to={page} end={end}>
+            {label}
+          </NavLink>
+          <Divider />
+        </Fragment>
+      ))}
+    </Flex>
+  )
 }

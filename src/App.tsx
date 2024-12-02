@@ -32,7 +32,7 @@ function App() {
       </AppShell.Header>
 
       <AppShell.Navbar py="md" px={4}>
-        <Header variant="navbar" />
+        <Header toggle={toggle} variant="navbar" />
       </AppShell.Navbar>
 
       <AppShell.Main pb={0} pr={0} w="100%" h="100vh">
