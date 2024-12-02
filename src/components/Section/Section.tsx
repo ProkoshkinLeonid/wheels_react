@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react"
 
+import bgUrl from "@assets/images/background.jpg"
 import { Flex, Text, Title } from "@mantine/core"
 
 import classes from "./Section.module.css"
@@ -11,19 +12,25 @@ interface SectionProps {
 
 export const Section: FC<SectionProps> = ({ children, title }) => {
   return (
-    <Flex align="center" className={classes.root} h="100%">
+    <Flex
+      style={{ backgroundImage: `url(${bgUrl})` }}
+      className={classes.root}
+      // pt="xl"
+      h="100%"
+      direction="column"
+      align="center"
+      gap="md"
+    >
       <Flex
-        style={{ backdropFilter: "blur(10px)" }}
-        pt="xl"
-        h="100%"
         direction="column"
+        h="100%"
+        w="100%"
         align="center"
-        gap="md"
+        pt="xl"
+        style={{ backdropFilter: "blur(10px)" }}
       >
-        <Title order={1} style={{ color: "white" }}>
-          {title}
-        </Title>
-        <Text size="xl" maw="50%" variant="text" style={{ color: "white" }}>
+        <Title order={1}>{title}</Title>
+        <Text size="xl" maw="50%" variant="text">
           {children}
         </Text>
       </Flex>

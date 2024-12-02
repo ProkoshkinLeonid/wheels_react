@@ -23,7 +23,7 @@ function App() {
       header={{ height: 100 }}
       navbar={{
         width: 300,
-        breakpoint: "sm",
+        breakpoint: "md",
         collapsed: { desktop: true, mobile: !opened },
       }}
     >
