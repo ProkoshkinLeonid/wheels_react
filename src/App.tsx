@@ -20,7 +20,7 @@ function App() {
       styles={{
         header: { borderBottom: 0 },
       }}
-      header={{ height: 72 }}
+      header={{ height: 80 }}
       navbar={{
         width: 300,
         breakpoint: "sm",

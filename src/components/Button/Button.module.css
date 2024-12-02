@@ -1,0 +1,21 @@
+.root {
+    &[data-disabled] {
+        opacity: 0.5;
+    }
+}
+
+.transparent {
+    &:not([data-disabled]) {
+        background-color: transparent;
+        color: var(--mantine-color-body);
+        font-size: var(--mantine-font-size-lg);
+    }
+
+    &:not([data-disabled]):hover {
+        color: var(--mantine-color-yellow-4)
+    }
+}
+
+.primary {
+
+}

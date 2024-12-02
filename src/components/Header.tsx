@@ -1,7 +1,8 @@
 import { FC } from "react"
 import { useNavigate } from "react-router-dom"
 
-import { Burger, Button, Group } from "@mantine/core"
+import { Button } from "@components/Button"
+import { Burger, Group } from "@mantine/core"
 
 import { PAGES } from "../pages/utils/routes.constants.ts"
 
@@ -16,15 +17,21 @@ export const Header: FC<HeaderProps> = ({ opened, toggle, variant }) => {
   const Buttons = () => {
     return (
       <>
-        <Button variant="default" onClick={() => navigate(PAGES.MAIN.INDEX)}>
+        <Button
+          variant="transparent"
+          onClick={() => navigate(PAGES.MAIN.INDEX)}
+        >
           Главная
         </Button>
-        <Button variant="default" onClick={() => navigate(PAGES.MAIN.SERVICES)}>
+        <Button
+          variant="transparent"
+          onClick={() => navigate(PAGES.MAIN.SERVICES)}
+        >
           Услуги
         </Button>
-        <Button variant="default">CКаталог б/у Резины</Button>
-        <Button variant="default">Акции и скидки</Button>
-        <Button variant="default">Контакты</Button>
+        <Button variant="transparent">Каталог б/у Резины</Button>
+        <Button variant="transparent">Акции и скидки</Button>
+        <Button variant="transparent">Контакты</Button>
       </>
     )
   }

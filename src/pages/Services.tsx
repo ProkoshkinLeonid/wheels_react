@@ -1,3 +1,5 @@
+import { Section } from "@components/Section.tsx"
+
 export const Services = () => {
-  return <div>Services</div>
+  return <Section title="Услуги">Наши услуги тут будут</Section>
 }
