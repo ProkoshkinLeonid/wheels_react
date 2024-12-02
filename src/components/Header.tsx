@@ -25,7 +25,7 @@ export const Header: FC<HeaderProps> = ({ opened, toggle, variant }) => {
       <Group h="100%" px="xl">
         <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="md" />
         <Group justify="space-between" style={{ flex: 1 }}>
-          <div>LOGO</div>
+          <Flex>LOGO</Flex>
           <Group ml="xl" gap="md" visibleFrom="md">
             {PAGES_LINKS.map(({ page, label, end }) => (
               <NavLink key={page} to={page} end={end}>

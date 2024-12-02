@@ -29,10 +29,25 @@ export const Section: FC<SectionProps> = ({ children, title }) => {
         pt="xl"
         style={{ backdropFilter: "blur(10px)" }}
       >
-        <Title order={1}>{title}</Title>
-        <Text size="xl" maw="50%" variant="text">
-          {children}
-        </Text>
+        <Flex
+          direction="column"
+          align="center"
+          w="max-content"
+          maw="65%"
+          py="md"
+        >
+          <Title order={1} style={{ color: "var(--mantine-color-yellow-4)" }}>
+            {title}
+          </Title>
+          <Text
+            style={{ fontWeight: 700, color: "white" }}
+            size="xl"
+            maw="50%"
+            variant="text"
+          >
+            {children}
+          </Text>
+        </Flex>
       </Flex>
     </Flex>
   )
