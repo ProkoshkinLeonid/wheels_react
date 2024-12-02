@@ -1,8 +1,8 @@
 import { FC, ReactNode } from "react"
 
-import { BackgroundImage, Flex, Text, Title } from "@mantine/core"
+import { Flex, Text, Title } from "@mantine/core"
 
-import bgImage from "../assets/background.jpg"
+import classes from "./Section.module.css"
 
 interface SectionProps {
   children: ReactNode
@@ -11,7 +11,7 @@ interface SectionProps {
 
 export const Section: FC<SectionProps> = ({ children, title }) => {
   return (
-    <BackgroundImage h="100%" src={bgImage}>
+    <Flex align="center" className={classes.root} h="100%">
       <Flex
         style={{ backdropFilter: "blur(10px)" }}
         pt="xl"
@@ -27,6 +27,6 @@ export const Section: FC<SectionProps> = ({ children, title }) => {
           {children}
         </Text>
       </Flex>
-    </BackgroundImage>
+    </Flex>
   )
 }
